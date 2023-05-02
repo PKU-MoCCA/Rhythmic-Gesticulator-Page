@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta property="og:title" content="Rhythmic Gesticulator: Rhythm-Aware Co-Speech Gesture Synthesis with Hierarchical Neural Embeddings"/>
+  <meta property="og:url" content=""/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <title>Rhythmic Gesticulator</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EWRYSDM25P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EWRYSDM25P');
+</script>
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+  <link rel="icon" href="static/figures/icon2.png">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+<section class="publication-header">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <!-- <div class="columns is-centered"> -->
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Rhythmic Gesticulator: Rhythm-Aware Co-Speech Gesture Synthesis with Hierarchical Neural Embeddings</h1>
+          <div class="is-size-3 publication-authors">
+            SIGGRAPH ASIA (Best Paper Awards) 2022
+          </div>
+        </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="publication-author-block">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://aubrey-ao.github.io/" target="_blank">Tenglong Ao</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://talegqz.github.io/" target="_blank">Qingzhe Gao</a><sup>1,2</sup>,</span>
+            <span class="author-block"><a href="https://thorin666.github.io/" target="_blank">Yuke Lou</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="http://baoquanchen.info/" target="_blank">Baoquan Chen</a><sup>1,3</sup>,</span>
+            <span class="author-block"><a href="https://libliu.info/" target="_blank">Libin Liu</a><sup>1,3</sup></span>
+
+            
+            
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Peking University, China<sup>1</sup>,</span> 
+            <span class="author-block">Shandong University, China<sup>2</sup>,</span> 
+            <span class="author-block">SIST & KLMP (MOE), China<sup>3</sup>,</span> 
+            <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+          </div>
+          
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2210.01448" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              
+              <!-- PDF Link. -->
+<!--              <span class="link-block">-->
+<!--                <a href="static/source/MotionCLIP.pdf" target="_blank"-->
+<!--                  class="external-link button is-normal is-rounded">-->
+<!--                  <span class="icon">-->
+<!--                    <i class="fas fa-file-pdf"></i>-->
+<!--                  </span>-->
+<!--                  <span>Paper</span>-->
+<!--                </a>-->
+<!--              </span>-->
+<!--                            </span>-->
+              <!-- </span> -->
+              <!-- Colab Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Aubrey-ao/HumanBehaviorAnimation" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+
+              </span>
+
+              <!-- <span class="link-block">
+                <a href="https://replicate.com/arielreplicate/motion_diffusion_model" target="_blank"
+                class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="fas fa-rocket"></i>
+                </span>
+                <span>Demo</span>
+              </a>
+
+              </span> -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=qy2MrNhsoIs/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- </span> -->
+              <!-- Colab Link. -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 
+<section class="hero is-small">
+  <!~~ <div class="hero-body"> ~~>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!~~ <div id="results-carousel" class="carousel results-carousel"> ~~>
+      <div class="container">
+      <div class="item">
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/teaser.png" alt="MotionCLIP"/>
+      </div>
+
+    </div>
+  </div>
+ <!~~  </div> ~~>
+  </div>
+  </div>
+ <!~~  </div> ~~>
+</section>
+ -->
+
+ <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/teaser.png" alt="cars peace"/>
+      </div>
+     
+      <h2 class="subtitle has-text-centered">
+        </span> Gesture results automatically synthesized by our system for a beat-rich TED talk clip.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Automatic synthesis of realistic co-speech gestures is an increasingly important yet 
+            challenging task in artificial embodied agent creation. Previous systems mainly focus 
+            on generating gestures in an end-to-end manner, which leads to difficulties in mining 
+            the clear rhythm and semantics due to the complex yet subtle harmony between speech and 
+            gestures. We present a novel co-speech gesture synthesis method that achieves convincing 
+            results both on the rhythm and semantics. For the rhythm, our system contains a robust 
+            rhythm-based segmentation pipeline to ensure the temporal coherence between the 
+            vocalization and gestures explicitly. For the gesture semantics, we devise a mechanism 
+            to effectively disentangle both low- and high-level neural embeddings of speech and 
+            motion based on linguistic theory. The high-level embedding corresponds to semantics, 
+            while the low-level embedding relates to subtle variations. Lastly, we build correspondence 
+            between the hierarchical embeddings of the speech and the motion, resulting in rhythm- and 
+            semantics-aware gesture synthesis. Evaluations with existing objective metrics, a newly 
+            proposed rhythmic metric, and human feedback show that our method outperforms 
+            state-of-the-art systems by a clear margin.</p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/sturcture.png" alt="cars peace" width="800"/>
+      </div>
+     
+    
+  </div>
+</div>
+</div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+<!--         <h2 class="title is-3">How does it work?</h2> -->
+      <h2 class="title is-3">System Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our system is composed of three core components: 
+            (a) the data module preprocesses a speech, segments it into 
+            normalized blocks based on the beats, and extracts speech features 
+            from these blocks; (b) the training module learns a gesture lexicon 
+            from the normalized motion blocks and trains the generator to synthesize 
+            gesture sequences, conditioned on the gesture lexemes, the style codes, 
+            as well as the features of previous motion blocks and adjacent speech 
+            blocks; and (c) the inference module employs interpreters to transfer 
+            the speech features to gesture lexemes and style codes, which are then 
+            used by the learned generator to predict future gestures.
+          </p>
+
+        </div>
+        <div class="content has-text-justified">
+          <p>            
+            To evaluate the rhythmic performance, 
+            we propose a new objective metric, PMB, to measure the percentage of matched 
+            beats. Our method outper-forms state-of-the-art systems both objectively and 
+            subjectively, as indicated by the MAJE, MAD, FGD, PMB metrics, and human 
+            feedback. The cross-language synthesis experiment demonstrates the robustness 
+            of our system for rhythmic perception. In terms of application, We show our 
+            system’s flexible and effective style editing ability that allows editing of 
+            several directorial styles of the generated gestures without manual annotation 
+            of the data. Lastly, we have systematically conducted detailed ablation studies 
+            that justify the design choices of our system.
+        </p>
+        </div>
+            </div>
+        </div>
+      </div>
+
+</section> 
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+
+      <div class="column is-centered has-text-centered">
+        <iframe width="720" height="405" src="https://www.youtube.com/embed/DO_W8plFWco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+      </div>
+     
+    
+  </div>
+</div>
+</div>
+</section>
+
+<!-- 
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/sampling.png" alt="cars peace"/>
+      </div>
+     
+    
+  </div>
+</div>
+</div>
+</section>
+ -->
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Synthesize Qualitative Gestures</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our system can synthesize realistic co-speech upper-body gestures
+            that match a given speech context both temporally and semantically.
+            It takes speech audio as input and generates gesture sequences
+            accordingly
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section> 
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="column is-centered has-text-centered">
+    <h3 class="title is-4">Short Sample Results</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+      <div class="column is-centered has-text-centered">
+                <video poster="" id="tree" controls  width=700>
+          <source src="static/figures/short/short1.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+                <video poster="" id="tree" controls  width=700>
+          <source src="static/figures/short/short2.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+                <video poster="" id="tree"  controls width=700>
+          <source src="static/figures/short/short3.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree"  controls width=700>
+        <source src="static/figures/short/short4.mp4"
+        type="video/mp4">
+      </video>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree"  controls width=700>
+      <source src="static/figures/short/short5.mp4"
+      type="video/mp4">
+      </video>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree"  controls width=700>
+      <source src="static/figures/short/short6.mp4"
+      type="video/mp4">
+      </video>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree"  controls width=700>
+      <source src="static/figures/short/short7.mp4"
+      type="video/mp4">
+      </video>
+      </div>
+
+</div>
+
+<div class="column is-centered has-text-centered">
+  <h3 class="title is-4">Long Sample Results</h3>
+    <div id="results-carousel" class="carousel results-carousel">
+    <div class="column is-centered has-text-centered">
+              <video poster="" id="tree" controls  width=700>
+        <source src="static/figures/long/long1.mp4"
+        type="video/mp4">
+      </video>
+    </div>
+
+    <div class="column is-centered has-text-centered">
+              <video poster="" id="tree" controls  width=700>
+        <source src="static/figures/long/long2.mp4"
+        type="video/mp4">
+      </video>
+    </div>
+
+</div>
+</section>
+
+
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Style Editing</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our system has the style editing ability that allows editing of 
+            several directorial styles of the generated gestures without manual annotation 
+            of the data. We have synthesized three animations for each of the motion
+            styles. Each animation has a constant desired low, mid, or high
+            feature value, as shown in the below three videos.
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section> 
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="column is-centered has-text-centered">
+      <div id="results-carousel" class="carousel results-carousel">
+      <div class="column is-centered has-text-centered">
+                <video poster="" id="tree" controls  width=700>
+          <source src="static/figures/style-edit/edit1.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+                <video poster="" id="tree" controls  width=700>
+          <source src="static/figures/style-edit/edit2.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+                <video poster="" id="tree"  controls width=700>
+          <source src="static/figures/style-edit/edit3.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+
+</div>
+</div>
+</section>
+
+
+
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Beat to The Music</h2>
+        <div class="content has-text-justified">
+          <p>
+          At last, We demonstrate the robustness of our method for rhythmic perception by testing its ability on music.
+          Hope you will enjoy it!
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section> 
+
+
+<section class="section hero is-small">
+<div class="container is-max-desktop">
+      <div class="column is-centered has-text-centered">
+         <video poster="" id="tree" controls width=700>
+          <source src="static/figures/music.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+</div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{Ao_2022,
+          doi       = {10.1145/3550454.3555435},
+          url       = {https://doi.org/10.1145%2F3550454.3555435},
+          year      = 2022,
+          month     = {nov},
+          publisher = {Association for Computing Machinery ({ACM})},
+          volume    = {41},
+          number    = {6},
+          pages     = {1--19},
+          author    = {Tenglong Ao and Qingzhe Gao and Yuke Lou and Baoquan Chen and Libin Liu},
+          title     = {Rhythmic Gesticulator},
+          journal   = {{ACM} Transactions on Graphics}
+        }</code></pre>
+    </div>
+</section>
+
+
+
+
+<footer class="footer">
+ <!--  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+      href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+      <i class="fas fa-file-pdf"></i>
+    </a>
+    <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <i class="fab fa-github"></i>
+    </a>
+  </div> -->
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This website is licensed under a <a rel="license"
+          href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+        Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+      <p>
+        Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If you want to reuse their <a
+        href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+</footer>
+
+
+  <script type="text/javascript">
+    var sc_project=12351448; 
+    var sc_invisible=1; 
+    var sc_security="c676de4f"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img
+    class="statcounter"
+    src="https://c.statcounter.com/12351448/0/c676de4f/1/"
+    alt="Web Analytics"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
